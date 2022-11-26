@@ -1,0 +1,116 @@
+﻿@using SadakaEli.Model.Domain
+@using SadakaEli.MvcWebUI.Models
+
+@{
+    Admin activeAdmin = SessionManager.ActiveAdmin;
+}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/Yonetim/Home/Index" class="brand-link">
+        <img src="~/Areas/Yonetim/Content/img/zeminsiz.png"  alt="SadakaEli" class="brand-image ">
+        <span class="brand-text font-weight-light">Yönetim Paneli</span>
+    </a>
+
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="@("/Areas/Yonetim/Content/img/AdminImages/"+activeAdmin.Photo)" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a  class="d-block">@activeAdmin.FullName</a>
+            </div>
+        </div>
+
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview menu-open">
+
+
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fa fa-user-circle"></i>
+                        <p>
+                            Yönetici Menüsü
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/Admin/AdminList" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Yöneticiler</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/Admin/AdminNew" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Yeni Yönetici Ekleme</p>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa fa-newspaper"></i>
+                        <p>
+                            Haber Kontrol Menüsü
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/News/NewsList" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Haberler</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/News/NewNews" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Yeni Haber Ekleme</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fa fa-wrench"></i>
+                        <p>
+                            Slider Kontrol Menüsü
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/Slider/SliderList" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Sliderlar</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/Yonetim/Slider/NewSlider" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Yeni Slider Ekleme</p>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+                </li>
+                <li class="nav-item">
+                    <a href="/Yonetim/Admin/LogOut" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            ÇIKIŞ
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+

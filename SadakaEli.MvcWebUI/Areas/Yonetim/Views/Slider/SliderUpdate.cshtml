@@ -1,0 +1,58 @@
+﻿@using SadakaEli.Model.Domain;
+@{
+    ViewBag.Title = "SliderUpdate";
+    Layout = "~/Areas/Yonetim/Views/Shared/_Layout.cshtml";
+}
+@model  Slider
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Ürün Güncelleme Ekranı</h3>
+            </div>
+            <form id="frmUpdateProduct" role="form">
+                <div class="card-body">
+                    <input type="hidden" id=txtSliderId value="@Model.Id" />
+                    <div class="form-group">
+                        <label>Slider'ı Fotoğrafı </label>
+                        <br />
+                        <img src="~/Areas/Yonetim/Content/img/SliderImages/@Model.ImagePath" style="width:200px;" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Yeni Fotoğraf</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="slPhoto">
+                                <label class="custom-file-label">Fotoğraf Seçiniz</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Slider'ın Üstündeki Yazı</label>
+                        <input type="text" value="@Model.Title" class="form-control" id="txtSliderTitle" placeholder="Ürün Fiyatı">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input id="btnUpdate" type="button" class="btn btn-primary btnpDüzenle" value="Güncelleştir" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section styles{
+
+    <link href="~/Areas/Yonetim/Content/plugins/summernote/summernote-bs4.min.css" rel="stylesheet" />
+    <link href="~/Areas/Yonetim/Content/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Areas/Yonetim/Content/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Areas/Yonetim/Content/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/Areas/Yonetim/Scripts/Slider/SliderUpdate.js"></script>
+}
+
